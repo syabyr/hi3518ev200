@@ -235,6 +235,15 @@ else
 endif
 endif
 
+ifeq ($(CROSS_COMPILE),arm-openwrt-linux-)
+ifdef CONFIG_HI3518EV200
+	cp cmd_bootss2_v400_hi3518ev200 bootss2.a -rf
+else
+	cp cmd_bootss2_v400 bootss2.a -rf
+endif
+endif
+
+
 ifeq ($(CROSS_COMPILE),arm-hisiv500-linux-)
 ifdef CONFIG_HI3519
 ifdef CONFIG_HIFMC_NAND

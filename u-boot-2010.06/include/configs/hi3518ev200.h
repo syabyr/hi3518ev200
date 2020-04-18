@@ -140,9 +140,9 @@
 /*-----------------------------------------------------------------------
  *  Environment   Configuration
  *-----------------------------------------------------------------------*/
-#define CONFIG_BOOTCOMMAND "bootm 0x82000000"
+#define CONFIG_BOOTCOMMAND "sf probe 0;sf read 0x82000000 0x100000 0x200000;bootm 0x82000000"
 #define CONFIG_BOOTDELAY	1
-#define CONFIG_BOOTARGS "mem=96M console=ttyAMA0,115200"
+#define CONFIG_BOOTARGS "mem=46M console=ttyAMA0,115200 sensor=ov9732 root=/dev/mtdblock4 rootfstype=squashfs mtdparts=hi_sfc:512K(boot),256K(env),256K(env1),2048K(kernel),5120K(rootfs),8192K(rootfs_data)"
 #define CONFIG_NETMASK  255.255.255.0       /* talk on MY local net */
 #define CONFIG_IPADDR   192.168.1.10        /* static IP I currently own */
 #define CONFIG_SERVERIP 192.168.1.2     /* current IP of tftp server ip */
@@ -270,10 +270,10 @@
 /*-----------------------------------------------------------------------
  * sdcard or usb storage system update
  * ----------------------------------------------------------------------*/
-/* #define CONFIG_AUTO_UPDATE			1 */
+#define CONFIG_AUTO_UPDATE			1
 #ifdef CONFIG_AUTO_UPDATE
 	#define CONFIG_AUTO_SD_UPDATE		1
-	#define CONFIG_AUTO_USB_UPDATE		1
+	#define CONFIG_AUTO_USB_UPDATE		0
 #endif
 
 /* #define __LITTLE_ENDIAN				1 */
