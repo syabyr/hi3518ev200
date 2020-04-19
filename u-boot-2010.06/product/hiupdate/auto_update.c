@@ -92,9 +92,9 @@ static struct medium_interface s_intf[MAX_UPDATE_INTF] = {
 #define AU_FL_FIRMWARE_ST	0x0
 #define AU_FL_FIRMWARE_ND	0x7FFFF
 #define AU_FL_KERNEL_ST		0x100000
-#define AU_FL_KERNEL_ND		0x5FFFFF
-#define AU_FL_ROOTFS_ST		0x600000
-#define AU_FL_ROOTFS_ND		0xbFFFFF
+#define AU_FL_KERNEL_ND		0x2FFFFF
+#define AU_FL_ROOTFS_ST		0x300000
+#define AU_FL_ROOTFS_ND		0x7FFFFF
 
 static int au_stor_curr_dev; /* current device */
 
